@@ -3,7 +3,7 @@ import java.util.*;
 import java.util.List;
 
 /*
-(3) Compare the performance of Collections.sort( ) between an
+Exercise 30: (3) Compare the performance of Collections.sort( ) between an
 ArrayList and a LinkedList.
  */
 public class Runner {
