@@ -208,14 +208,55 @@ public class Countries {
         return new ArrayList<String>(select(size).keySet());
     }
     public static void main(String[] args) {
-        Set set = new HashSet<String>(names(6));
-        set.addAll(names(6));
+        /*System.out.println("HashSet");
+        Set set = new HashSet<String>(names(1000));
+        time = System.currentTimeMillis();
+        set.addAll(names(1000));
+        System.out.println(System.currentTimeMillis() - time);
         System.out.println(set);
-        set = new LinkedHashSet<String>(names(6));
-        set.addAll(names(6));
+
+        System.out.println("LinkedHashSet");
+        set = new LinkedHashSet<String>(names(1000));
+        time = System.currentTimeMillis();
+        set.addAll(names(1000));
+        System.out.println(System.currentTimeMillis() - time);
         System.out.println(set);
-        set = new TreeSet<String>(names(6));
-        set.addAll(names(6));
+
+        System.out.println("TreeSet");
+        set = new TreeSet<String>(names(1000));
+        time = System.currentTimeMillis();
+        set.addAll(names(100000));
+        System.out.println(System.currentTimeMillis() - time);
         System.out.println(set);
+         */
+
+        long time;
+        Set hashSet = new HashSet<Integer>();
+        Set linkedHashSet = new LinkedHashSet<Integer>();
+        Set treeSet = new TreeSet<Integer>();
+        int i = 0;
+        time = System.currentTimeMillis();
+        while(i < 100000) {
+            hashSet.add(i);
+            i++;
+        }
+        System.out.println("HashSet");
+        System.out.println(System.currentTimeMillis() - time);
+        i = 0;
+        time = System.currentTimeMillis();
+        while(i < 100000) {
+            linkedHashSet.add(i);
+            i++;
+        }
+        System.out.println("LinkedHashSet");
+        System.out.println(System.currentTimeMillis() - time);
+        i = 0;
+        time = System.currentTimeMillis();
+        while(i < 100000) {
+            treeSet.add(i);
+            i++;
+        }
+        System.out.println("TreeSet");
+        System.out.println(System.currentTimeMillis() - time);
     }
 }
